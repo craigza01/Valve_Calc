@@ -107,6 +107,7 @@ public partial class MainWindow : Window
         lblXt.Content = "";
         lblFd.Content = "";
 
+        // Populate the various drop down lists from the Enums constructed for each type
         foreach (Data_Set.FlowCoefficientTypes ft in Enum.GetValues(typeof(Data_Set.FlowCoefficientTypes)))
         {
             var s = ft.GetType().GetField(ft.ToString());
@@ -121,7 +122,7 @@ public partial class MainWindow : Window
             }
         }
 
-        // Remove Cv from drop down list
+        // Remove Cv from drop down list - as not implemented at this stage
         ddlFlowcoefficientC.Items.RemoveAt(2);
 
         foreach (Data_Set.MediumTypes mt in Enum.GetValues(typeof(Data_Set.MediumTypes)))
